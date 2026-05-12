@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0f6b68">
+    <title>PlayPatch Kids</title>
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="icon" href="./icons/app-icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">No ads. No account. Real-world play.</p>
+          <h1>PlayPatch Kids</h1>
+        </div>
+        <button class="ghost-button" id="parentButton" type="button">Parent Gate</button>
+      </header>
+
+      <section class="daily-plan" aria-label="Today's activity plan">
+        <div class="plan-copy">
+          <p class="eyebrow">Today</p>
+          <h2 id="planTitle">Pick a play path</h2>
+          <p id="planSummary">Choose age, time, and energy. PlayPatch builds a calm activity set parents can trust.</p>
+          <div class="patch-strip" id="patchStrip" aria-label="Earned patches"></div>
+        </div>
+        <div class="plan-meter" aria-label="Plan progress">
+          <strong id="completedCount">0</strong>
+          <span>finished</span>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Activity filters">
+        <div>
+          <span class="control-label">Age</span>
+          <div class="segmented" id="ageFilter">
+            <button type="button" data-age="4-5" class="active">4-5</button>
+            <button type="button" data-age="6-8">6-8</button>
+            <button type="button" data-age="9-10">9-10</button>
+          </div>
+        </div>
+        <div>
+          <span class="control-label">Time</span>
+          <div class="segmented" id="timeFilter">
+            <button type="button" data-time="10" class="active">10m</button>
+            <button type="button" data-time="20">20m</button>
+            <button type="button" data-time="30">30m</button>
+          </div>
+        </div>
+        <div>
+          <span class="control-label">Energy</span>
+          <div class="segmented" id="energyFilter">
+            <button type="button" data-energy="calm">Calm</button>
+            <button type="button" data-energy="mixed" class="active">Mixed</button>
+            <button type="button" data-energy="active">Active</button>
+          </div>
+        </div>
+        <button class="primary-button" id="buildPlanButton" type="button">Build Plan</button>
+      </section>
+
+      <section class="pack-strip" aria-label="Activity packs">
+        <button class="pack-card active" type="button" data-pack="starter">
+          <span>Included</span>
+          <strong>Starter Patch</strong>
+          <small>6 no-prep activities</small>
+        </button>
+        <button class="pack-card" type="button" data-pack="rainy">
+          <span>Premium Preview</span>
+          <strong>Rainy Day Lab</strong>
+          <small>STEM, craft, calm play</small>
+        </button>
+        <button class="pack-card" type="button" data-pack="travel">
+          <span>Premium Preview</span>
+          <strong>Travel Tamer</strong>
+          <small>Quiet car and cafe cards</small>
+        </button>
+      </section>
+
+      <section class="activity-stage" aria-label="Activity player">
+        <article class="mission-card" id="missionCard">
+          <div class="mission-art" id="missionArt" aria-hidden="true"></div>
+          <div class="mission-content">
+            <div class="mission-meta">
+              <span id="missionType">Make</span>
+              <span id="missionMinutes">10 min</span>
+              <span id="missionAge">4-5</span>
+            </div>
+            <h2 id="missionTitle">Paper Bridge Lab</h2>
+            <p id="missionDescription">Build a tiny bridge from paper and test how many toy passengers it can hold.</p>
+            <div class="mission-actions">
+              <button class="primary-button" id="startActivityButton" type="button">Start Activity</button>
+              <button class="ghost-button" id="favoriteButton" type="button">Save</button>
+              <button class="ghost-button" id="shuffleButton" type="button">Shuffle</button>
+            </div>
+          </div>
+        </article>
+
+        <aside class="activity-panel" aria-label="Activity steps">
+          <div class="timer-panel">
+            <span class="control-label">Focus Timer</span>
+            <strong id="timerDisplay">10:00</strong>
+            <small id="timerStatus">Ready when you are.</small>
+            <div class="timer-actions">
+              <button id="timerButton" type="button">Start</button>
+              <button id="resetTimerButton" type="button">Reset</button>
+            </div>
+          </div>
+          <div>
+            <h3>Supplies</h3>
+            <div class="supply-list" id="supplyList"></div>
+          </div>
+          <div>
+            <h3>Steps</h3>
+            <ol class="step-list" id="stepList"></ol>
+          </div>
+          <button class="finish-button" id="finishButton" type="button">Finish and Earn Patch</button>
+        </aside>
+      </section>
+
+      <section class="deck-section" aria-label="Activity deck">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Activity Deck</p>
+            <h2>Ready to play</h2>
+          </div>
+          <span id="deckSignal">6 cards</span>
+        </div>
+        <div class="activity-grid" id="activityGrid"></div>
+      </section>
+
+      <section class="parent-panel" id="parentPanel" aria-label="Parent controls">
+        <div>
+          <p class="eyebrow">Parent View</p>
+          <h2>Paid App Guardrails</h2>
+          <p>No ads, no third-party trackers, no social feed, no child profile upload, no location, no camera, no microphone. Future purchases stay behind a parent gate.</p>
+          <div class="parent-controls" aria-label="Parent settings">
+            <label>
+              <input id="soundToggle" type="checkbox">
+              Gentle sound cues
+            </label>
+            <label>
+              <input id="calmModeToggle" type="checkbox" checked>
+              Calm endings
+            </label>
+          </div>
+        </div>
+        <div class="parent-grid">
+          <article>
+            <strong id="favoriteCount">0</strong>
+            <span>saved favorites</span>
+          </article>
+          <article>
+            <strong id="patchCount">0</strong>
+            <span>patches earned</span>
+          </article>
+          <article>
+            <strong>Offline</strong>
+            <span>installable PWA shell</span>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

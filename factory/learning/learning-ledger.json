@@ -1,0 +1,1693 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-05-12T17:20:45.585Z",
+  "trainingPolicy": "Continuous learning means reviewed lessons, interviews, eval prompts, and training candidates. Fine-tuning or model replacement requires human approval.",
+  "records": [
+    {
+      "id": "learning-2026-05-12T17-20-45-584Z",
+      "createdAt": "2026-05-12T17:20:45.584Z",
+      "latestRun": "run-2026-05-12T17-18-58-999Z",
+      "latestStatus": "NEEDS DISCOVERY",
+      "trainingPolicy": "Continuous learning means reviewed lessons, interviews, eval prompts, and training candidates. Fine-tuning or model replacement requires human approval.",
+      "actions": [
+        "Observe latest Factory reports and agent runtime.",
+        "Interview each agent for current work, dependency risk, and evidence gap.",
+        "Cross-check the interview summary with local Ollama when available.",
+        "Extract reusable lessons, anti-patterns, and evaluation prompts.",
+        "Append learning record to the local Factory learning ledger.",
+        "Hold fine-tuning, model replacement, and gate changes for human approval."
+      ],
+      "agentInterviews": [
+        {
+          "agent": "Master Moderator",
+          "state": "working",
+          "currentWork": "Running learning loop and cross-check interviews",
+          "waitingFor": "Agent interviews and local Ollama cross-check",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": []
+        },
+        {
+          "agent": "Steering Committee",
+          "state": "sleeping",
+          "currentWork": "Standing by for release, risk, or approval decision",
+          "waitingFor": "Gate escalation",
+          "dependencyRisk": "Depends on: qa-security, evidence-bundle, challenge-review",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "09-release-gates.md"
+          ]
+        },
+        {
+          "agent": "Product Market Agent",
+          "state": "blocked",
+          "currentWork": "Market gate stopped: target buyer and pain evidence missing",
+          "waitingFor": "Buyer, user, painful workflow, distribution path",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "01-product-market-gate.md"
+          ]
+        },
+        {
+          "agent": "Product Intake Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by to create product intake record",
+          "waitingFor": "Passed market gate or approved bypass",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "02-product-intake.md"
+          ]
+        },
+        {
+          "agent": "Architecture Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for requirements, data model, and security level",
+          "waitingFor": "Approved intake and charter",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "05-architecture.md",
+            "ADR if changed"
+          ]
+        },
+        {
+          "agent": "Backend Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for approved build tickets",
+          "waitingFor": "Architecture, API contract, and security model",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "unit/API checks"
+          ]
+        },
+        {
+          "agent": "Frontend UX Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for workflow and interface contracts",
+          "waitingFor": "UX flow and API contract",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "screenshot",
+            "responsive check"
+          ]
+        },
+        {
+          "agent": "QA/Security Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for code diff, tests, and scan path",
+          "waitingFor": "Build output",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "test output",
+            "dependency/security scan"
+          ]
+        },
+        {
+          "agent": "Evidence Agent",
+          "state": "done",
+          "currentWork": "Blocker evidence captured",
+          "waitingFor": "Human review",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui, qa-security",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "checks",
+            "risks",
+            "decisions"
+          ]
+        },
+        {
+          "agent": "Decision Challenger",
+          "state": "waiting",
+          "currentWork": "Ready to challenge commercial assumptions",
+          "waitingFor": "Updated buyer evidence",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "08-decision-challenge.md"
+          ]
+        }
+      ],
+      "ollama": {
+        "ok": false,
+        "model": "qwen3:8b",
+        "error": "Timed out while asking Ollama.",
+        "status": "ERROR"
+      },
+      "lessons": [
+        "Parallel work must be dependency-clear before execution.",
+        "Waiting states must name the missing dependency.",
+        "Local LLM learning is a reviewed memory/eval queue, not automatic fine-tuning.",
+        "Human approval remains mandatory for release, security acceptance, deployment, and model training.",
+        "Jarvis UI actions need visible busy, error, and recovery states before they can be trusted.",
+        "Backend edits should run with pnpm jarvis:dev to avoid manual kill/start loops."
+      ],
+      "nextActions": [
+        "Review ledger entry.",
+        "Convert repeated lessons into evaluation prompts.",
+        "Promote approved lessons into Factory docs.",
+        "Only then consider human-approved local model tuning."
+      ],
+      "filePath": "/Users/vineetpathak/Documents/New project/BuildPodFactory/factory/learning/interviews/learning-2026-05-12T17-20-45-584Z.md"
+    },
+    {
+      "id": "learning-2026-05-12T17-18-56-443Z",
+      "createdAt": "2026-05-12T17:18:56.443Z",
+      "latestRun": "run-2026-05-12T17-18-51-469Z",
+      "latestStatus": "PASS",
+      "trainingPolicy": "Continuous learning means reviewed lessons, interviews, eval prompts, and training candidates. Fine-tuning or model replacement requires human approval.",
+      "actions": [
+        "Observe latest Factory reports and agent runtime.",
+        "Interview each agent for current work, dependency risk, and evidence gap.",
+        "Cross-check the interview summary with local Ollama when available.",
+        "Extract reusable lessons, anti-patterns, and evaluation prompts.",
+        "Append learning record to the local Factory learning ledger.",
+        "Hold fine-tuning, model replacement, and gate changes for human approval."
+      ],
+      "agentInterviews": [
+        {
+          "agent": "Master Moderator",
+          "state": "working",
+          "currentWork": "Running learning loop and cross-check interviews",
+          "waitingFor": "Agent interviews and local Ollama cross-check",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": []
+        },
+        {
+          "agent": "Steering Committee",
+          "state": "waiting",
+          "currentWork": "Release gate is waiting for human approval",
+          "waitingFor": "Owner approval",
+          "dependencyRisk": "Depends on: qa-security, evidence-bundle, challenge-review",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "09-release-gates.md"
+          ]
+        },
+        {
+          "agent": "Product Market Agent",
+          "state": "done",
+          "currentWork": "Market gate passed for Product 000",
+          "waitingFor": "Real product idea",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "01-product-market-gate.md"
+          ]
+        },
+        {
+          "agent": "Product Intake Agent",
+          "state": "done",
+          "currentWork": "Product intake baseline created",
+          "waitingFor": "Real product intake inputs",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "02-product-intake.md"
+          ]
+        },
+        {
+          "agent": "Architecture Agent",
+          "state": "done",
+          "currentWork": "Architecture path checked",
+          "waitingFor": "Real requirements",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "05-architecture.md",
+            "ADR if changed"
+          ]
+        },
+        {
+          "agent": "Backend Agent",
+          "state": "done",
+          "currentWork": "Backend readiness simulated",
+          "waitingFor": "Approved backend ticket",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "unit/API checks"
+          ]
+        },
+        {
+          "agent": "Frontend UX Agent",
+          "state": "done",
+          "currentWork": "UX readiness simulated",
+          "waitingFor": "Approved workflow",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "screenshot",
+            "responsive check"
+          ]
+        },
+        {
+          "agent": "QA/Security Agent",
+          "state": "done",
+          "currentWork": "Verification gates simulated",
+          "waitingFor": "Real code diff",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "test output",
+            "dependency/security scan"
+          ]
+        },
+        {
+          "agent": "Evidence Agent",
+          "state": "done",
+          "currentWork": "Evidence pack generated",
+          "waitingFor": "Human review",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui, qa-security",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "checks",
+            "risks",
+            "decisions"
+          ]
+        },
+        {
+          "agent": "Decision Challenger",
+          "state": "done",
+          "currentWork": "Decision challenge completed",
+          "waitingFor": "High-impact real decision",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "08-decision-challenge.md"
+          ]
+        }
+      ],
+      "ollama": {
+        "ok": false,
+        "model": "qwen3:8b",
+        "error": "Timed out while asking Ollama.",
+        "status": "ERROR"
+      },
+      "lessons": [
+        "Parallel work must be dependency-clear before execution.",
+        "Waiting states must name the missing dependency.",
+        "Local LLM learning is a reviewed memory/eval queue, not automatic fine-tuning.",
+        "Human approval remains mandatory for release, security acceptance, deployment, and model training.",
+        "Jarvis UI actions need visible busy, error, and recovery states before they can be trusted.",
+        "Backend edits should run with pnpm jarvis:dev to avoid manual kill/start loops."
+      ],
+      "nextActions": [
+        "Review ledger entry.",
+        "Convert repeated lessons into evaluation prompts.",
+        "Promote approved lessons into Factory docs.",
+        "Only then consider human-approved local model tuning."
+      ],
+      "filePath": "/Users/vineetpathak/Documents/New project/BuildPodFactory/factory/learning/interviews/learning-2026-05-12T17-18-56-443Z.md"
+    },
+    {
+      "id": "learning-2026-05-12T17-12-19-794Z",
+      "createdAt": "2026-05-12T17:12:19.794Z",
+      "latestRun": "run-2026-05-12T17-09-25-908Z",
+      "latestStatus": "NEEDS DISCOVERY",
+      "trainingPolicy": "Continuous learning means reviewed lessons, interviews, eval prompts, and training candidates. Fine-tuning or model replacement requires human approval.",
+      "actions": [
+        "Observe latest Factory reports and agent runtime.",
+        "Interview each agent for current work, dependency risk, and evidence gap.",
+        "Cross-check the interview summary with local Ollama when available.",
+        "Extract reusable lessons, anti-patterns, and evaluation prompts.",
+        "Append learning record to the local Factory learning ledger.",
+        "Hold fine-tuning, model replacement, and gate changes for human approval."
+      ],
+      "agentInterviews": [
+        {
+          "agent": "Master Moderator",
+          "state": "working",
+          "currentWork": "Running learning loop and cross-check interviews",
+          "waitingFor": "Agent interviews and local Ollama cross-check",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": []
+        },
+        {
+          "agent": "Steering Committee",
+          "state": "sleeping",
+          "currentWork": "Standing by for release, risk, or approval decision",
+          "waitingFor": "Gate escalation",
+          "dependencyRisk": "Depends on: qa-security, evidence-bundle, challenge-review",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "09-release-gates.md"
+          ]
+        },
+        {
+          "agent": "Product Market Agent",
+          "state": "blocked",
+          "currentWork": "Market gate stopped: target buyer and pain evidence missing",
+          "waitingFor": "Buyer, user, painful workflow, distribution path",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "01-product-market-gate.md"
+          ]
+        },
+        {
+          "agent": "Product Intake Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by to create product intake record",
+          "waitingFor": "Passed market gate or approved bypass",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "02-product-intake.md"
+          ]
+        },
+        {
+          "agent": "Architecture Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for requirements, data model, and security level",
+          "waitingFor": "Approved intake and charter",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "05-architecture.md",
+            "ADR if changed"
+          ]
+        },
+        {
+          "agent": "Backend Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for approved build tickets",
+          "waitingFor": "Architecture, API contract, and security model",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "unit/API checks"
+          ]
+        },
+        {
+          "agent": "Frontend UX Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for workflow and interface contracts",
+          "waitingFor": "UX flow and API contract",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "screenshot",
+            "responsive check"
+          ]
+        },
+        {
+          "agent": "QA/Security Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for code diff, tests, and scan path",
+          "waitingFor": "Build output",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "test output",
+            "dependency/security scan"
+          ]
+        },
+        {
+          "agent": "Evidence Agent",
+          "state": "done",
+          "currentWork": "Blocker evidence captured",
+          "waitingFor": "Human review",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui, qa-security",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "checks",
+            "risks",
+            "decisions"
+          ]
+        },
+        {
+          "agent": "Decision Challenger",
+          "state": "waiting",
+          "currentWork": "Ready to challenge commercial assumptions",
+          "waitingFor": "Updated buyer evidence",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "08-decision-challenge.md"
+          ]
+        }
+      ],
+      "ollama": {
+        "ok": false,
+        "model": "qwen3:8b",
+        "error": "Timed out while asking Ollama.",
+        "status": "ERROR"
+      },
+      "lessons": [
+        "Parallel work must be dependency-clear before execution.",
+        "Waiting states must name the missing dependency.",
+        "Local LLM learning is a reviewed memory/eval queue, not automatic fine-tuning.",
+        "Human approval remains mandatory for release, security acceptance, deployment, and model training.",
+        "Jarvis UI actions need visible busy, error, and recovery states before they can be trusted.",
+        "Backend edits should run with pnpm jarvis:dev to avoid manual kill/start loops."
+      ],
+      "nextActions": [
+        "Review ledger entry.",
+        "Convert repeated lessons into evaluation prompts.",
+        "Promote approved lessons into Factory docs.",
+        "Only then consider human-approved local model tuning."
+      ],
+      "filePath": "/Users/vineetpathak/Documents/New project/BuildPodFactory/factory/learning/interviews/learning-2026-05-12T17-12-19-794Z.md"
+    },
+    {
+      "id": "learning-2026-05-12T17-06-59-244Z",
+      "createdAt": "2026-05-12T17:06:59.244Z",
+      "latestRun": "run-2026-05-12T17-03-10-071Z",
+      "latestStatus": "NEEDS DISCOVERY",
+      "trainingPolicy": "Continuous learning means reviewed lessons, interviews, eval prompts, and training candidates. Fine-tuning or model replacement requires human approval.",
+      "actions": [
+        "Observe latest Factory reports and agent runtime.",
+        "Interview each agent for current work, dependency risk, and evidence gap.",
+        "Cross-check the interview summary with local Ollama when available.",
+        "Extract reusable lessons, anti-patterns, and evaluation prompts.",
+        "Append learning record to the local Factory learning ledger.",
+        "Hold fine-tuning, model replacement, and gate changes for human approval."
+      ],
+      "agentInterviews": [
+        {
+          "agent": "Master Moderator",
+          "state": "working",
+          "currentWork": "Running learning loop and cross-check interviews",
+          "waitingFor": "Agent interviews and local Ollama cross-check",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": []
+        },
+        {
+          "agent": "Steering Committee",
+          "state": "sleeping",
+          "currentWork": "Standing by for release, risk, or approval decision",
+          "waitingFor": "Gate escalation",
+          "dependencyRisk": "Depends on: qa-security, evidence-bundle, challenge-review",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "09-release-gates.md"
+          ]
+        },
+        {
+          "agent": "Product Market Agent",
+          "state": "blocked",
+          "currentWork": "Market gate stopped: target buyer and pain evidence missing",
+          "waitingFor": "Buyer, user, painful workflow, distribution path",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "01-product-market-gate.md"
+          ]
+        },
+        {
+          "agent": "Product Intake Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by to create product intake record",
+          "waitingFor": "Passed market gate or approved bypass",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "02-product-intake.md"
+          ]
+        },
+        {
+          "agent": "Architecture Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for requirements, data model, and security level",
+          "waitingFor": "Approved intake and charter",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "05-architecture.md",
+            "ADR if changed"
+          ]
+        },
+        {
+          "agent": "Backend Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for approved build tickets",
+          "waitingFor": "Architecture, API contract, and security model",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "unit/API checks"
+          ]
+        },
+        {
+          "agent": "Frontend UX Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for workflow and interface contracts",
+          "waitingFor": "UX flow and API contract",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "screenshot",
+            "responsive check"
+          ]
+        },
+        {
+          "agent": "QA/Security Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for code diff, tests, and scan path",
+          "waitingFor": "Build output",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "test output",
+            "dependency/security scan"
+          ]
+        },
+        {
+          "agent": "Evidence Agent",
+          "state": "done",
+          "currentWork": "Blocker evidence captured",
+          "waitingFor": "Human review",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui, qa-security",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "checks",
+            "risks",
+            "decisions"
+          ]
+        },
+        {
+          "agent": "Decision Challenger",
+          "state": "waiting",
+          "currentWork": "Ready to challenge commercial assumptions",
+          "waitingFor": "Updated buyer evidence",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "08-decision-challenge.md"
+          ]
+        }
+      ],
+      "ollama": {
+        "ok": false,
+        "model": "qwen3:8b",
+        "error": "Timed out while asking Ollama.",
+        "status": "ERROR"
+      },
+      "lessons": [
+        "Parallel work must be dependency-clear before execution.",
+        "Waiting states must name the missing dependency.",
+        "Local LLM learning is a reviewed memory/eval queue, not automatic fine-tuning.",
+        "Human approval remains mandatory for release, security acceptance, deployment, and model training.",
+        "Jarvis UI actions need visible busy, error, and recovery states before they can be trusted.",
+        "Backend edits should run with pnpm jarvis:dev to avoid manual kill/start loops."
+      ],
+      "nextActions": [
+        "Review ledger entry.",
+        "Convert repeated lessons into evaluation prompts.",
+        "Promote approved lessons into Factory docs.",
+        "Only then consider human-approved local model tuning."
+      ],
+      "filePath": "/Users/vineetpathak/Documents/New project/BuildPodFactory/factory/learning/interviews/learning-2026-05-12T17-06-59-244Z.md"
+    },
+    {
+      "id": "learning-2026-05-12T16-38-25-256Z",
+      "createdAt": "2026-05-12T16:38:25.257Z",
+      "latestRun": "run-2026-05-12T16-32-05-223Z",
+      "latestStatus": "NEEDS DISCOVERY",
+      "trainingPolicy": "Continuous learning means reviewed lessons, interviews, eval prompts, and training candidates. Fine-tuning or model replacement requires human approval.",
+      "actions": [
+        "Observe latest Factory reports and agent runtime.",
+        "Interview each agent for current work, dependency risk, and evidence gap.",
+        "Cross-check the interview summary with local Ollama when available.",
+        "Extract reusable lessons, anti-patterns, and evaluation prompts.",
+        "Append learning record to the local Factory learning ledger.",
+        "Hold fine-tuning, model replacement, and gate changes for human approval."
+      ],
+      "agentInterviews": [
+        {
+          "agent": "Master Moderator",
+          "state": "working",
+          "currentWork": "Running learning loop and cross-check interviews",
+          "waitingFor": "Agent interviews and local Ollama cross-check",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": []
+        },
+        {
+          "agent": "Steering Committee",
+          "state": "sleeping",
+          "currentWork": "Standing by for release, risk, or approval decision",
+          "waitingFor": "Gate escalation",
+          "dependencyRisk": "Depends on: qa-security, evidence-bundle, challenge-review",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "09-release-gates.md"
+          ]
+        },
+        {
+          "agent": "Product Market Agent",
+          "state": "blocked",
+          "currentWork": "Market gate stopped: target buyer and pain evidence missing",
+          "waitingFor": "Buyer, user, painful workflow, distribution path",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "01-product-market-gate.md"
+          ]
+        },
+        {
+          "agent": "Product Intake Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by to create product intake record",
+          "waitingFor": "Passed market gate or approved bypass",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "02-product-intake.md"
+          ]
+        },
+        {
+          "agent": "Architecture Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for requirements, data model, and security level",
+          "waitingFor": "Approved intake and charter",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "05-architecture.md",
+            "ADR if changed"
+          ]
+        },
+        {
+          "agent": "Backend Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for approved build tickets",
+          "waitingFor": "Architecture, API contract, and security model",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "unit/API checks"
+          ]
+        },
+        {
+          "agent": "Frontend UX Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for workflow and interface contracts",
+          "waitingFor": "UX flow and API contract",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "screenshot",
+            "responsive check"
+          ]
+        },
+        {
+          "agent": "QA/Security Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for code diff, tests, and scan path",
+          "waitingFor": "Build output",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "test output",
+            "dependency/security scan"
+          ]
+        },
+        {
+          "agent": "Evidence Agent",
+          "state": "done",
+          "currentWork": "Blocker evidence captured",
+          "waitingFor": "Human review",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui, qa-security",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "checks",
+            "risks",
+            "decisions"
+          ]
+        },
+        {
+          "agent": "Decision Challenger",
+          "state": "waiting",
+          "currentWork": "Ready to challenge commercial assumptions",
+          "waitingFor": "Updated buyer evidence",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "08-decision-challenge.md"
+          ]
+        }
+      ],
+      "ollama": {
+        "ok": false,
+        "model": "qwen3:8b",
+        "error": "Timed out while asking Ollama.",
+        "status": "ERROR"
+      },
+      "lessons": [
+        "Parallel work must be dependency-clear before execution.",
+        "Waiting states must name the missing dependency.",
+        "Local LLM learning is a reviewed memory/eval queue, not automatic fine-tuning.",
+        "Human approval remains mandatory for release, security acceptance, deployment, and model training.",
+        "Jarvis UI actions need visible busy, error, and recovery states before they can be trusted.",
+        "Backend edits should run with pnpm jarvis:dev to avoid manual kill/start loops."
+      ],
+      "nextActions": [
+        "Review ledger entry.",
+        "Convert repeated lessons into evaluation prompts.",
+        "Promote approved lessons into Factory docs.",
+        "Only then consider human-approved local model tuning."
+      ],
+      "filePath": "/Users/vineetpathak/Documents/New project/BuildPodFactory/factory/learning/interviews/learning-2026-05-12T16-38-25-256Z.md"
+    },
+    {
+      "id": "learning-2026-05-12T16-25-03-147Z",
+      "createdAt": "2026-05-12T16:25:03.147Z",
+      "latestRun": "run-2026-05-12T16-08-04-945Z",
+      "latestStatus": "NEEDS DISCOVERY",
+      "trainingPolicy": "Continuous learning means reviewed lessons, interviews, eval prompts, and training candidates. Fine-tuning or model replacement requires human approval.",
+      "actions": [
+        "Observe latest Factory reports and agent runtime.",
+        "Interview each agent for current work, dependency risk, and evidence gap.",
+        "Cross-check the interview summary with local Ollama when available.",
+        "Extract reusable lessons, anti-patterns, and evaluation prompts.",
+        "Append learning record to the local Factory learning ledger.",
+        "Hold fine-tuning, model replacement, and gate changes for human approval."
+      ],
+      "agentInterviews": [
+        {
+          "agent": "Master Moderator",
+          "state": "working",
+          "currentWork": "Running learning loop and cross-check interviews",
+          "waitingFor": "Agent interviews and local Ollama cross-check",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": []
+        },
+        {
+          "agent": "Steering Committee",
+          "state": "sleeping",
+          "currentWork": "Standing by for release, risk, or approval decision",
+          "waitingFor": "Gate escalation",
+          "dependencyRisk": "Depends on: qa-security, evidence-bundle, challenge-review",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "09-release-gates.md"
+          ]
+        },
+        {
+          "agent": "Product Market Agent",
+          "state": "blocked",
+          "currentWork": "Market gate stopped: target buyer and pain evidence missing",
+          "waitingFor": "Buyer, user, painful workflow, distribution path",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "01-product-market-gate.md"
+          ]
+        },
+        {
+          "agent": "Product Intake Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by to create product intake record",
+          "waitingFor": "Passed market gate or approved bypass",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "02-product-intake.md"
+          ]
+        },
+        {
+          "agent": "Architecture Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for requirements, data model, and security level",
+          "waitingFor": "Approved intake and charter",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "05-architecture.md",
+            "ADR if changed"
+          ]
+        },
+        {
+          "agent": "Backend Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for approved build tickets",
+          "waitingFor": "Architecture, API contract, and security model",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "unit/API checks"
+          ]
+        },
+        {
+          "agent": "Frontend UX Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for workflow and interface contracts",
+          "waitingFor": "UX flow and API contract",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "screenshot",
+            "responsive check"
+          ]
+        },
+        {
+          "agent": "QA/Security Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for code diff, tests, and scan path",
+          "waitingFor": "Build output",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "test output",
+            "dependency/security scan"
+          ]
+        },
+        {
+          "agent": "Evidence Agent",
+          "state": "done",
+          "currentWork": "Blocker evidence captured",
+          "waitingFor": "Human review",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui, qa-security",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "checks",
+            "risks",
+            "decisions"
+          ]
+        },
+        {
+          "agent": "Decision Challenger",
+          "state": "waiting",
+          "currentWork": "Ready to challenge commercial assumptions",
+          "waitingFor": "Updated buyer evidence",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "08-decision-challenge.md"
+          ]
+        }
+      ],
+      "ollama": {
+        "ok": false,
+        "model": "qwen3:8b",
+        "error": "Timed out while asking Ollama.",
+        "status": "ERROR"
+      },
+      "lessons": [
+        "Parallel work must be dependency-clear before execution.",
+        "Waiting states must name the missing dependency.",
+        "Local LLM learning is a reviewed memory/eval queue, not automatic fine-tuning.",
+        "Human approval remains mandatory for release, security acceptance, deployment, and model training.",
+        "Jarvis UI actions need visible busy, error, and recovery states before they can be trusted.",
+        "Backend edits should run with pnpm jarvis:dev to avoid manual kill/start loops."
+      ],
+      "nextActions": [
+        "Review ledger entry.",
+        "Convert repeated lessons into evaluation prompts.",
+        "Promote approved lessons into Factory docs.",
+        "Only then consider human-approved local model tuning."
+      ],
+      "filePath": "/Users/vineetpathak/Documents/New project/BuildPodFactory/factory/learning/interviews/learning-2026-05-12T16-25-03-147Z.md"
+    },
+    {
+      "id": "learning-2026-05-12T15-16-30-962Z",
+      "createdAt": "2026-05-12T15:16:30.962Z",
+      "latestRun": "run-2026-05-12T15-08-47-027Z",
+      "latestStatus": "NEEDS DISCOVERY",
+      "trainingPolicy": "Continuous learning means reviewed lessons, interviews, eval prompts, and training candidates. Fine-tuning or model replacement requires human approval.",
+      "actions": [
+        "Observe latest Factory reports and agent runtime.",
+        "Interview each agent for current work, dependency risk, and evidence gap.",
+        "Cross-check the interview summary with local Ollama when available.",
+        "Extract reusable lessons, anti-patterns, and evaluation prompts.",
+        "Append learning record to the local Factory learning ledger.",
+        "Hold fine-tuning, model replacement, and gate changes for human approval."
+      ],
+      "agentInterviews": [
+        {
+          "agent": "Master Moderator",
+          "state": "working",
+          "currentWork": "Running learning loop and cross-check interviews",
+          "waitingFor": "Agent interviews and local Ollama cross-check",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": []
+        },
+        {
+          "agent": "Steering Committee",
+          "state": "sleeping",
+          "currentWork": "Standing by for release, risk, or approval decision",
+          "waitingFor": "Gate escalation",
+          "dependencyRisk": "Depends on: qa-security, evidence-bundle, challenge-review",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "09-release-gates.md"
+          ]
+        },
+        {
+          "agent": "Product Market Agent",
+          "state": "blocked",
+          "currentWork": "Market gate stopped: target buyer and pain evidence missing",
+          "waitingFor": "Buyer, user, painful workflow, distribution path",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "01-product-market-gate.md"
+          ]
+        },
+        {
+          "agent": "Product Intake Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by to create product intake record",
+          "waitingFor": "Passed market gate or approved bypass",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "02-product-intake.md"
+          ]
+        },
+        {
+          "agent": "Architecture Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for requirements, data model, and security level",
+          "waitingFor": "Approved intake and charter",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "05-architecture.md",
+            "ADR if changed"
+          ]
+        },
+        {
+          "agent": "Backend Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for approved build tickets",
+          "waitingFor": "Architecture, API contract, and security model",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "unit/API checks"
+          ]
+        },
+        {
+          "agent": "Frontend UX Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for workflow and interface contracts",
+          "waitingFor": "UX flow and API contract",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "screenshot",
+            "responsive check"
+          ]
+        },
+        {
+          "agent": "QA/Security Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for code diff, tests, and scan path",
+          "waitingFor": "Build output",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "test output",
+            "dependency/security scan"
+          ]
+        },
+        {
+          "agent": "Evidence Agent",
+          "state": "done",
+          "currentWork": "Blocker evidence captured",
+          "waitingFor": "Human review",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui, qa-security",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "checks",
+            "risks",
+            "decisions"
+          ]
+        },
+        {
+          "agent": "Decision Challenger",
+          "state": "waiting",
+          "currentWork": "Ready to challenge commercial assumptions",
+          "waitingFor": "Updated buyer evidence",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "08-decision-challenge.md"
+          ]
+        }
+      ],
+      "ollama": {
+        "ok": false,
+        "model": "qwen3:8b",
+        "error": "Timed out while asking Ollama.",
+        "status": "ERROR"
+      },
+      "lessons": [
+        "Parallel work must be dependency-clear before execution.",
+        "Waiting states must name the missing dependency.",
+        "Local LLM learning is a reviewed memory/eval queue, not automatic fine-tuning.",
+        "Human approval remains mandatory for release, security acceptance, deployment, and model training.",
+        "Jarvis UI actions need visible busy, error, and recovery states before they can be trusted.",
+        "Backend edits should run with pnpm jarvis:dev to avoid manual kill/start loops."
+      ],
+      "nextActions": [
+        "Review ledger entry.",
+        "Convert repeated lessons into evaluation prompts.",
+        "Promote approved lessons into Factory docs.",
+        "Only then consider human-approved local model tuning."
+      ],
+      "filePath": "/Users/vineetpathak/Documents/New project/BuildPodFactory/factory/learning/interviews/learning-2026-05-12T15-16-30-962Z.md"
+    },
+    {
+      "id": "learning-2026-05-12T13-48-38-544Z",
+      "createdAt": "2026-05-12T13:48:38.544Z",
+      "latestRun": "run-2026-05-12T13-34-13-549Z",
+      "latestStatus": "PASS",
+      "trainingPolicy": "Continuous learning means reviewed lessons, interviews, eval prompts, and training candidates. Fine-tuning or model replacement requires human approval.",
+      "actions": [
+        "Observe latest Factory reports and agent runtime.",
+        "Interview each agent for current work, dependency risk, and evidence gap.",
+        "Cross-check the interview summary with local Ollama when available.",
+        "Extract reusable lessons, anti-patterns, and evaluation prompts.",
+        "Append learning record to the local Factory learning ledger.",
+        "Hold fine-tuning, model replacement, and gate changes for human approval."
+      ],
+      "agentInterviews": [
+        {
+          "agent": "Master Moderator",
+          "state": "working",
+          "currentWork": "Running learning loop and cross-check interviews",
+          "waitingFor": "Agent interviews and local Ollama cross-check",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": []
+        },
+        {
+          "agent": "Steering Committee",
+          "state": "waiting",
+          "currentWork": "Release gate is waiting for human approval",
+          "waitingFor": "Owner approval",
+          "dependencyRisk": "Depends on: qa-security, evidence-bundle, challenge-review",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "09-release-gates.md"
+          ]
+        },
+        {
+          "agent": "Product Market Agent",
+          "state": "done",
+          "currentWork": "Market gate passed for Product 000",
+          "waitingFor": "Real product idea",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "01-product-market-gate.md"
+          ]
+        },
+        {
+          "agent": "Product Intake Agent",
+          "state": "done",
+          "currentWork": "Product intake baseline created",
+          "waitingFor": "Real product intake inputs",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "02-product-intake.md"
+          ]
+        },
+        {
+          "agent": "Architecture Agent",
+          "state": "done",
+          "currentWork": "Architecture path checked",
+          "waitingFor": "Real requirements",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "05-architecture.md",
+            "ADR if changed"
+          ]
+        },
+        {
+          "agent": "Backend Agent",
+          "state": "done",
+          "currentWork": "Backend readiness simulated",
+          "waitingFor": "Approved backend ticket",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "unit/API checks"
+          ]
+        },
+        {
+          "agent": "Frontend UX Agent",
+          "state": "done",
+          "currentWork": "UX readiness simulated",
+          "waitingFor": "Approved workflow",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "screenshot",
+            "responsive check"
+          ]
+        },
+        {
+          "agent": "QA/Security Agent",
+          "state": "done",
+          "currentWork": "Verification gates simulated",
+          "waitingFor": "Real code diff",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "test output",
+            "dependency/security scan"
+          ]
+        },
+        {
+          "agent": "Evidence Agent",
+          "state": "done",
+          "currentWork": "Evidence pack generated",
+          "waitingFor": "Human review",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui, qa-security",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "checks",
+            "risks",
+            "decisions"
+          ]
+        },
+        {
+          "agent": "Decision Challenger",
+          "state": "done",
+          "currentWork": "Decision challenge completed",
+          "waitingFor": "High-impact real decision",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "08-decision-challenge.md"
+          ]
+        }
+      ],
+      "ollama": {
+        "ok": false,
+        "model": "qwen3:8b",
+        "error": "Timed out while asking Ollama.",
+        "status": "ERROR"
+      },
+      "lessons": [
+        "Parallel work must be dependency-clear before execution.",
+        "Waiting states must name the missing dependency.",
+        "Local LLM learning is a reviewed memory/eval queue, not automatic fine-tuning.",
+        "Human approval remains mandatory for release, security acceptance, deployment, and model training."
+      ],
+      "nextActions": [
+        "Review ledger entry.",
+        "Convert repeated lessons into evaluation prompts.",
+        "Promote approved lessons into Factory docs.",
+        "Only then consider human-approved local model tuning."
+      ],
+      "filePath": "/Users/vineetpathak/Documents/New project/BuildPodFactory/factory/learning/interviews/learning-2026-05-12T13-48-38-544Z.md"
+    },
+    {
+      "id": "learning-2026-05-12T12-58-52-996Z",
+      "createdAt": "2026-05-12T12:58:52.996Z",
+      "latestRun": "run-2026-05-12T12-46-33-819Z",
+      "latestStatus": "NEEDS DISCOVERY",
+      "trainingPolicy": "Continuous learning means reviewed lessons, interviews, eval prompts, and training candidates. Fine-tuning or model replacement requires human approval.",
+      "actions": [
+        "Observe latest Factory reports and agent runtime.",
+        "Interview each agent for current work, dependency risk, and evidence gap.",
+        "Cross-check the interview summary with local Ollama when available.",
+        "Extract reusable lessons, anti-patterns, and evaluation prompts.",
+        "Append learning record to the local Factory learning ledger.",
+        "Hold fine-tuning, model replacement, and gate changes for human approval."
+      ],
+      "agentInterviews": [
+        {
+          "agent": "Master Moderator",
+          "state": "working",
+          "currentWork": "Running learning loop and cross-check interviews",
+          "waitingFor": "Agent interviews and local Ollama cross-check",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": []
+        },
+        {
+          "agent": "Steering Committee",
+          "state": "sleeping",
+          "currentWork": "Standing by for release, risk, or approval decision",
+          "waitingFor": "Gate escalation",
+          "dependencyRisk": "Depends on: qa-security, evidence-bundle, challenge-review",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "09-release-gates.md"
+          ]
+        },
+        {
+          "agent": "Product Market Agent",
+          "state": "blocked",
+          "currentWork": "Market gate stopped: target buyer and pain evidence missing",
+          "waitingFor": "Buyer, user, painful workflow, distribution path",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "01-product-market-gate.md"
+          ]
+        },
+        {
+          "agent": "Product Intake Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by to create product intake record",
+          "waitingFor": "Passed market gate or approved bypass",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "02-product-intake.md"
+          ]
+        },
+        {
+          "agent": "Architecture Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for requirements, data model, and security level",
+          "waitingFor": "Approved intake and charter",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "05-architecture.md",
+            "ADR if changed"
+          ]
+        },
+        {
+          "agent": "Backend Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for approved build tickets",
+          "waitingFor": "Architecture, API contract, and security model",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "unit/API checks"
+          ]
+        },
+        {
+          "agent": "Frontend UX Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for workflow and interface contracts",
+          "waitingFor": "UX flow and API contract",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "screenshot",
+            "responsive check"
+          ]
+        },
+        {
+          "agent": "QA/Security Agent",
+          "state": "sleeping",
+          "currentWork": "Standing by for code diff, tests, and scan path",
+          "waitingFor": "Build output",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "test output",
+            "dependency/security scan"
+          ]
+        },
+        {
+          "agent": "Evidence Agent",
+          "state": "done",
+          "currentWork": "Blocker evidence captured",
+          "waitingFor": "Human review",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui, qa-security",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "checks",
+            "risks",
+            "decisions"
+          ]
+        },
+        {
+          "agent": "Decision Challenger",
+          "state": "waiting",
+          "currentWork": "Ready to challenge commercial assumptions",
+          "waitingFor": "Updated buyer evidence",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "08-decision-challenge.md"
+          ]
+        }
+      ],
+      "ollama": {
+        "ok": false,
+        "model": "qwen3:8b",
+        "error": "Timed out while asking Ollama.",
+        "status": "ERROR"
+      },
+      "lessons": [
+        "Parallel work must be dependency-clear before execution.",
+        "Waiting states must name the missing dependency.",
+        "Local LLM learning is a reviewed memory/eval queue, not automatic fine-tuning.",
+        "Human approval remains mandatory for release, security acceptance, deployment, and model training."
+      ],
+      "nextActions": [
+        "Review ledger entry.",
+        "Convert repeated lessons into evaluation prompts.",
+        "Promote approved lessons into Factory docs.",
+        "Only then consider human-approved local model tuning."
+      ],
+      "filePath": "/Users/vineetpathak/Documents/New project/BuildPodFactory/factory/learning/interviews/learning-2026-05-12T12-58-52-996Z.md"
+    },
+    {
+      "id": "learning-2026-05-12T12-43-21-954Z",
+      "createdAt": "2026-05-12T12:43:21.954Z",
+      "latestRun": "run-2026-05-12T11-14-57-357Z",
+      "latestStatus": "PASS",
+      "trainingPolicy": "Continuous learning means reviewed lessons, interviews, eval prompts, and training candidates. Fine-tuning or model replacement requires human approval.",
+      "actions": [
+        "Observe latest Factory reports and agent runtime.",
+        "Interview each agent for current work, dependency risk, and evidence gap.",
+        "Cross-check the interview summary with local Ollama when available.",
+        "Extract reusable lessons, anti-patterns, and evaluation prompts.",
+        "Append learning record to the local Factory learning ledger.",
+        "Hold fine-tuning, model replacement, and gate changes for human approval."
+      ],
+      "agentInterviews": [
+        {
+          "agent": "Master Moderator",
+          "state": "working",
+          "currentWork": "Running learning loop and cross-check interviews",
+          "waitingFor": "Agent interviews and local Ollama cross-check",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": []
+        },
+        {
+          "agent": "Steering Committee",
+          "state": "waiting",
+          "currentWork": "Release gate is waiting for human approval",
+          "waitingFor": "Owner approval",
+          "dependencyRisk": "Depends on: qa-security, evidence-bundle, challenge-review",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "09-release-gates.md"
+          ]
+        },
+        {
+          "agent": "Product Market Agent",
+          "state": "done",
+          "currentWork": "Market gate passed for Product 000",
+          "waitingFor": "Real product idea",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "01-product-market-gate.md"
+          ]
+        },
+        {
+          "agent": "Product Intake Agent",
+          "state": "done",
+          "currentWork": "Product intake baseline created",
+          "waitingFor": "Real product intake inputs",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "02-product-intake.md"
+          ]
+        },
+        {
+          "agent": "Architecture Agent",
+          "state": "done",
+          "currentWork": "Architecture path checked",
+          "waitingFor": "Real requirements",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "05-architecture.md",
+            "ADR if changed"
+          ]
+        },
+        {
+          "agent": "Backend Agent",
+          "state": "waiting",
+          "currentWork": "Backend API slice ready for review",
+          "waitingFor": "QA/Security and Evidence review",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "unit/API checks"
+          ]
+        },
+        {
+          "agent": "Frontend UX Agent",
+          "state": "waiting",
+          "currentWork": "Frontend UX slice ready for review",
+          "waitingFor": "QA/Security and Evidence review",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "screenshot",
+            "responsive check"
+          ]
+        },
+        {
+          "agent": "QA/Security Agent",
+          "state": "done",
+          "currentWork": "Verification gates simulated",
+          "waitingFor": "Real code diff",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "test output",
+            "dependency/security scan"
+          ]
+        },
+        {
+          "agent": "Evidence Agent",
+          "state": "done",
+          "currentWork": "Learning interview evidence captured",
+          "waitingFor": "Review learning ledger",
+          "dependencyRisk": "Depends on: backend-api, frontend-ui, qa-security",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "checks",
+            "risks",
+            "decisions"
+          ]
+        },
+        {
+          "agent": "Decision Challenger",
+          "state": "waiting",
+          "currentWork": "Decision challenge ready for review",
+          "waitingFor": "QA/Security and Evidence review",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "08-decision-challenge.md"
+          ]
+        }
+      ],
+      "ollama": {
+        "ok": false,
+        "model": "qwen3:8b",
+        "error": "Timed out while asking Ollama.",
+        "status": "ERROR"
+      },
+      "lessons": [
+        "Parallel work must be dependency-clear before execution.",
+        "Waiting states must name the missing dependency.",
+        "Local LLM learning is a reviewed memory/eval queue, not automatic fine-tuning.",
+        "Human approval remains mandatory for release, security acceptance, deployment, and model training."
+      ],
+      "nextActions": [
+        "Review ledger entry.",
+        "Convert repeated lessons into evaluation prompts.",
+        "Promote approved lessons into Factory docs.",
+        "Only then consider human-approved local model tuning."
+      ],
+      "filePath": "/Users/vineetpathak/Documents/New project/BuildPodFactory/factory/learning/interviews/learning-2026-05-12T12-43-21-954Z.md"
+    },
+    {
+      "id": "learning-2026-05-12T12-42-33-924Z",
+      "createdAt": "2026-05-12T12:42:33.924Z",
+      "latestRun": "run-2026-05-12T11-14-57-357Z",
+      "latestStatus": "PASS",
+      "trainingPolicy": "Continuous learning means reviewed lessons, interviews, eval prompts, and training candidates. Fine-tuning or model replacement requires human approval.",
+      "actions": [
+        "Observe latest Factory reports and agent runtime.",
+        "Interview each agent for current work, dependency risk, and evidence gap.",
+        "Cross-check the interview summary with local Ollama when available.",
+        "Extract reusable lessons, anti-patterns, and evaluation prompts.",
+        "Append learning record to the local Factory learning ledger.",
+        "Hold fine-tuning, model replacement, and gate changes for human approval."
+      ],
+      "agentInterviews": [
+        {
+          "agent": "Master Moderator",
+          "state": "working",
+          "currentWork": "Running learning loop and cross-check interviews",
+          "waitingFor": "Agent interviews and local Ollama cross-check",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": []
+        },
+        {
+          "agent": "Steering Committee",
+          "state": "waiting",
+          "currentWork": "Release gate is waiting for human approval",
+          "waitingFor": "Owner approval",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "09-release-gates.md"
+          ]
+        },
+        {
+          "agent": "Product Market Agent",
+          "state": "done",
+          "currentWork": "Market gate passed for Product 000",
+          "waitingFor": "Real product idea",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "01-product-market-gate.md"
+          ]
+        },
+        {
+          "agent": "Product Intake Agent",
+          "state": "done",
+          "currentWork": "Product intake baseline created",
+          "waitingFor": "Real product intake inputs",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "02-product-intake.md"
+          ]
+        },
+        {
+          "agent": "Architecture Agent",
+          "state": "done",
+          "currentWork": "Architecture path checked",
+          "waitingFor": "Real requirements",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "05-architecture.md",
+            "ADR if changed"
+          ]
+        },
+        {
+          "agent": "Backend Agent",
+          "state": "done",
+          "currentWork": "Backend readiness simulated",
+          "waitingFor": "Approved backend ticket",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "unit/API checks"
+          ]
+        },
+        {
+          "agent": "Frontend UX Agent",
+          "state": "done",
+          "currentWork": "UX readiness simulated",
+          "waitingFor": "Approved workflow",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "screenshot",
+            "responsive check"
+          ]
+        },
+        {
+          "agent": "QA/Security Agent",
+          "state": "done",
+          "currentWork": "Verification gates simulated",
+          "waitingFor": "Real code diff",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "test output",
+            "dependency/security scan"
+          ]
+        },
+        {
+          "agent": "Evidence Agent",
+          "state": "done",
+          "currentWork": "Evidence pack generated",
+          "waitingFor": "Human review",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "changed files",
+            "checks",
+            "risks",
+            "decisions"
+          ]
+        },
+        {
+          "agent": "Decision Challenger",
+          "state": "done",
+          "currentWork": "Decision challenge completed",
+          "waitingFor": "High-impact real decision",
+          "dependencyRisk": "No blocking dependency recorded",
+          "evidenceQuestion": "What evidence would prove your work is safe, useful, and complete?",
+          "recommendedEvidence": [
+            "08-decision-challenge.md"
+          ]
+        }
+      ],
+      "ollama": {
+        "ok": false,
+        "model": "qwen3:8b",
+        "error": "Timed out while asking Ollama.",
+        "status": "ERROR"
+      },
+      "lessons": [
+        "Parallel work must be dependency-clear before execution.",
+        "Waiting states must name the missing dependency.",
+        "Local LLM learning is a reviewed memory/eval queue, not automatic fine-tuning.",
+        "Human approval remains mandatory for release, security acceptance, deployment, and model training."
+      ],
+      "nextActions": [
+        "Review ledger entry.",
+        "Convert repeated lessons into evaluation prompts.",
+        "Promote approved lessons into Factory docs.",
+        "Only then consider human-approved local model tuning."
+      ],
+      "filePath": "/Users/vineetpathak/Documents/New project/BuildPodFactory/factory/learning/interviews/learning-2026-05-12T12-42-33-924Z.md"
+    }
+  ]
+}

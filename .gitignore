@@ -1,0 +1,24 @@
+.DS_Store
+node_modules/
+.pnpm-store/
+
+# Local runtime output
+*.log
+coverage/
+dist/
+.next/
+.turbo/
+
+# Generated Factory evidence history
+products/product-000-dry-run/run-*/
+products/product-000-dry-run-blocker/run-*/
+factory/learning/interviews/learning-*.md
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Editor and OS noise
+.idea/
+.vscode/

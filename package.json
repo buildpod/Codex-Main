@@ -1,0 +1,19 @@
+{
+  "name": "buildpodfactory",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "jarvis": "node apps/jarvis/server.mjs",
+    "jarvis:dev": "node factory/tools/jarvis-dev.mjs",
+    "jarvis:watch": "node factory/tools/jarvis-dev.mjs --watch",
+    "jarvis:health": "node factory/tools/jarvis-health.mjs",
+    "jarvis:smoke": "node factory/tools/jarvis-smoke.mjs",
+    "jarvis:check": "node factory/tools/jarvis-check.mjs",
+    "playpatch": "node apps/playpatch/server.mjs",
+    "playpatch:check": "node --check apps/playpatch/server.mjs && node --check apps/playpatch/public/app.js",
+    "playpatch:smoke": "node apps/playpatch/smoke.mjs",
+    "factory:dry-run": "node factory/tools/factory-dry-run.mjs run sample-product",
+    "factory:dry-run:blocker": "node factory/tools/factory-dry-run.mjs run missing-buyer"
+  }
+}

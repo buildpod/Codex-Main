@@ -1,0 +1,16 @@
+{
+  "name": "PlayPatch Kids",
+  "short_name": "PlayPatch",
+  "description": "A calm, no-ads kids activity app for real-world play.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff7e8",
+  "theme_color": "#0f6b68",
+  "icons": [
+    {
+      "src": "/icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

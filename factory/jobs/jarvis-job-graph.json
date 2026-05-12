@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-05-12T17:28:33.218Z",
+  "policy": "Agents can run in parallel only when dependencies, file ownership, contracts, tests, and evidence paths are clear.",
+  "jobs": [
+    {
+      "id": "market-gate",
+      "title": "Market gate check",
+      "agent": "product",
+      "state": "done",
+      "dependsOn": [],
+      "blocks": [
+        "product-intake"
+      ],
+      "parallelSafe": false,
+      "fileLocks": [
+        "factory/commercial/product-market-gate.md"
+      ],
+      "contracts": [
+        "Buyer, pain, urgency, distribution, willingness to pay"
+      ],
+      "evidenceRequired": [
+        "01-product-market-gate.md"
+      ],
+      "approvalRequired": true,
+      "stopConditions": [
+        "No buyer",
+        "No painful workflow",
+        "No distribution path"
+      ],
+      "waitingFor": "",
+      "updatedAt": "2026-05-12T17:28:33.217Z"
+    },
+    {
+      "id": "product-intake",
+      "title": "Product intake and classification",
+      "agent": "intake",
+      "state": "done",
+      "dependsOn": [
+        "market-gate"
+      ],
+      "blocks": [
+        "architecture-contract"
+      ],
+      "parallelSafe": false,
+      "fileLocks": [
+        "factory/templates/product-intake-template.md"
+      ],
+      "contracts": [
+        "Intended use",
+        "data classification",
+        "security level"
+      ],
+      "evidenceRequired": [
+        "02-product-intake.md"
+      ],
+      "approvalRequired": false,
+      "stopConditions": [
+        "Unknown intended use",
+        "Unknown data/security class"
+      ],
+      "waitingFor": "",
+      "updatedAt": "2026-05-12T17:28:33.217Z"
+    },
+    {
+      "id": "architecture-contract",
+      "title": "Architecture and shared contracts",
+      "agent": "architecture",
+      "state": "done",
+      "dependsOn": [
+        "product-intake"
+      ],
+      "blocks": [
+        "backend-api",
+        "frontend-ui",
+        "challenge-review"
+      ],
+      "parallelSafe": false,
+      "fileLocks": [
+        "factory/architecture/default-architecture.md"
+      ],
+      "contracts": [
+        "API shape",
+        "tenant boundary",
+        "data model"
+      ],
+      "evidenceRequired": [
+        "05-architecture.md",
+        "ADR if changed"
+      ],
+      "approvalRequired": true,
+      "stopConditions": [
+        "Contract unclear",
+        "tenant boundary unclear"
+      ],
+      "waitingFor": "",
+      "updatedAt": "2026-05-12T17:28:33.217Z"
+    },
+    {
+      "id": "backend-api",
+      "title": "Backend API slice",
+      "agent": "backend",
+      "state": "review",
+      "dependsOn": [
+        "architecture-contract"
+      ],
+      "blocks": [
+        "qa-security",
+        "evidence-bundle"
+      ],
+      "parallelSafe": true,
+      "fileLocks": [
+        "products/*/backend"
+      ],
+      "contracts": [
+        "API request/response contract"
+      ],
+      "evidenceRequired": [
+        "changed files",
+        "unit/API checks"
+      ],
+      "approvalRequired": false,
+      "stopConditions": [
+        "Auth model unclear",
+        "API contract changes"
+      ],
+      "waitingFor": "",
+      "updatedAt": "2026-05-12T17:28:33.217Z"
+    },
+    {
+      "id": "frontend-ui",
+      "title": "Frontend UX slice",
+      "agent": "frontend",
+      "state": "review",
+      "dependsOn": [
+        "architecture-contract"
+      ],
+      "blocks": [
+        "qa-security",
+        "evidence-bundle"
+      ],
+      "parallelSafe": true,
+      "fileLocks": [
+        "products/*/frontend"
+      ],
+      "contracts": [
+        "UX flow",
+        "component props",
+        "API contract"
+      ],
+      "evidenceRequired": [
+        "changed files",
+        "screenshot",
+        "responsive check"
+      ],
+      "approvalRequired": false,
+      "stopConditions": [
+        "Primary workflow unclear",
+        "API contract missing"
+      ],
+      "waitingFor": "",
+      "updatedAt": "2026-05-12T17:28:33.217Z"
+    },
+    {
+      "id": "challenge-review",
+      "title": "Decision challenge",
+      "agent": "challenge",
+      "state": "review",
+      "dependsOn": [
+        "market-gate",
+        "architecture-contract"
+      ],
+      "blocks": [
+        "steering-release"
+      ],
+      "parallelSafe": true,
+      "fileLocks": [],
+      "contracts": [
+        "Risk assumptions"
+      ],
+      "evidenceRequired": [
+        "08-decision-challenge.md"
+      ],
+      "approvalRequired": false,
+      "stopConditions": [
+        "Critical assumption unresolved"
+      ],
+      "waitingFor": "",
+      "updatedAt": "2026-05-12T17:28:33.217Z"
+    },
+    {
+      "id": "qa-security",
+      "title": "QA and security verification",
+      "agent": "qa",
+      "state": "waiting",
+      "dependsOn": [
+        "backend-api",
+        "frontend-ui"
+      ],
+      "blocks": [
+        "evidence-bundle",
+        "steering-release"
+      ],
+      "parallelSafe": true,
+      "fileLocks": [],
+      "contracts": [
+        "Test plan",
+        "security baseline"
+      ],
+      "evidenceRequired": [
+        "test output",
+        "dependency/security scan"
+      ],
+      "approvalRequired": false,
+      "stopConditions": [
+        "Critical finding",
+        "secret exposure"
+      ],
+      "waitingFor": "Depends on: backend-api, frontend-ui",
+      "updatedAt": "2026-05-12T17:28:33.217Z"
+    },
+    {
+      "id": "evidence-bundle",
+      "title": "Evidence bundle",
+      "agent": "evidence",
+      "state": "waiting",
+      "dependsOn": [
+        "backend-api",
+        "frontend-ui",
+        "qa-security"
+      ],
+      "blocks": [
+        "steering-release"
+      ],
+      "parallelSafe": true,
+      "fileLocks": [
+        "products/*/release-evidence"
+      ],
+      "contracts": [
+        "Evidence ledger"
+      ],
+      "evidenceRequired": [
+        "changed files",
+        "checks",
+        "risks",
+        "decisions"
+      ],
+      "approvalRequired": false,
+      "stopConditions": [
+        "Missing test output",
+        "missing changed-file list"
+      ],
+      "waitingFor": "Depends on: backend-api, frontend-ui, qa-security",
+      "updatedAt": "2026-05-12T17:28:33.217Z"
+    },
+    {
+      "id": "steering-release",
+      "title": "Steering release approval",
+      "agent": "steering",
+      "state": "waiting",
+      "dependsOn": [
+        "qa-security",
+        "evidence-bundle",
+        "challenge-review"
+      ],
+      "blocks": [],
+      "parallelSafe": false,
+      "fileLocks": [],
+      "contracts": [
+        "Release gate"
+      ],
+      "evidenceRequired": [
+        "09-release-gates.md"
+      ],
+      "approvalRequired": true,
+      "stopConditions": [
+        "Human approval missing",
+        "release gate incomplete"
+      ],
+      "waitingFor": "Depends on: qa-security, evidence-bundle, challenge-review",
+      "updatedAt": "2026-05-12T17:28:33.217Z"
+    }
+  ]
+}

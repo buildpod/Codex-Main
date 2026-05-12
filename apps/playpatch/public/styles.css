@@ -1,0 +1,522 @@
+:root {
+  color-scheme: light;
+  --ink: #17324d;
+  --muted: #68778a;
+  --paper: #fffaf0;
+  --line: rgba(23, 50, 77, 0.14);
+  --mint: #40b7a2;
+  --sea: #0f6b68;
+  --coral: #ff7b67;
+  --sun: #ffd66b;
+  --blue: #2772b8;
+  --leaf: #7fb95d;
+  --shadow: 0 18px 40px rgba(23, 50, 77, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255, 214, 107, 0.36), transparent 30%),
+    radial-gradient(circle at 85% 12%, rgba(64, 183, 162, 0.22), transparent 26%),
+    linear-gradient(180deg, #fff7e8 0%, #eef8f4 100%);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+.app-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 22px 0 44px;
+}
+
+.topbar,
+.daily-plan,
+.controls,
+.mission-card,
+.activity-panel,
+.deck-section,
+.parent-panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.topbar {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+}
+
+.eyebrow,
+.control-label {
+  display: block;
+  margin: 0 0 6px;
+  color: var(--sea);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 0.95;
+}
+
+h2 {
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.primary-button,
+.ghost-button,
+.finish-button,
+.segmented button,
+.timer-actions button {
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 14px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.primary-button,
+.finish-button {
+  border-color: transparent;
+  color: #fff;
+  background: var(--sea);
+}
+
+.finish-button {
+  width: 100%;
+  background: var(--coral);
+}
+
+.ghost-button,
+.timer-actions button {
+  color: var(--sea);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(39, 114, 184, 0.32);
+  outline-offset: 2px;
+}
+
+.daily-plan {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 116px;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 16px;
+  background:
+    linear-gradient(135deg, rgba(255, 214, 107, 0.54), rgba(255, 255, 255, 0.78)),
+    #fff;
+}
+
+.plan-meter {
+  min-height: 112px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed rgba(23, 50, 77, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.55);
+  text-align: center;
+}
+
+.plan-meter strong {
+  display: block;
+  font-size: 2.4rem;
+}
+
+.patch-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.patch-strip span {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(23, 50, 77, 0.12);
+  border-radius: 999px;
+  padding: 0 10px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.52);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.patch-strip span.earned {
+  color: #fff;
+  background: var(--coral);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  gap: 12px;
+  align-items: end;
+  margin-top: 14px;
+  padding: 14px;
+}
+
+.segmented {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.segmented button {
+  min-width: 0;
+  padding: 0 8px;
+  color: var(--muted);
+}
+
+.segmented button.active {
+  color: #fff;
+  background: var(--blue);
+}
+
+.pack-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.pack-card {
+  min-height: 104px;
+  display: grid;
+  align-content: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+}
+
+.pack-card.active {
+  border-color: var(--sea);
+  box-shadow: inset 0 0 0 2px rgba(15, 107, 104, 0.14);
+}
+
+.pack-card span,
+.pack-card small,
+.timer-panel small {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.pack-card span {
+  color: var(--coral);
+  text-transform: uppercase;
+}
+
+.activity-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.mission-card {
+  min-height: 470px;
+  display: grid;
+  grid-template-rows: minmax(220px, 0.95fr) auto;
+  overflow: hidden;
+}
+
+.mission-art {
+  min-height: 260px;
+  position: relative;
+  overflow: hidden;
+  background: #d8f2eb;
+}
+
+.mission-art svg {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  display: block;
+}
+
+.mission-content,
+.activity-panel,
+.deck-section,
+.parent-panel {
+  padding: 16px;
+}
+
+.mission-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.mission-meta span,
+#deckSignal,
+.supply-list span,
+.activity-card span {
+  min-height: 26px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0 10px;
+  color: var(--sea);
+  background: rgba(64, 183, 162, 0.14);
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.mission-content h2 {
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+.mission-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.activity-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.timer-panel {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #17324d;
+  color: #fff;
+}
+
+.timer-panel .control-label {
+  color: #9ee8d8;
+}
+
+.timer-panel small {
+  color: #cdeee7;
+}
+
+#timerDisplay {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.timer-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.supply-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.step-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.step-list li {
+  padding-left: 4px;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.deck-section,
+.parent-panel {
+  margin-top: 14px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.activity-card {
+  min-height: 178px;
+  display: grid;
+  align-content: space-between;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+}
+
+.activity-card.active {
+  border-color: var(--sea);
+  box-shadow: inset 0 0 0 2px rgba(15, 107, 104, 0.14);
+}
+
+.activity-card h3 {
+  margin-bottom: 4px;
+  text-transform: none;
+  font-size: 1rem;
+}
+
+.activity-card p {
+  font-size: 0.88rem;
+}
+
+.parent-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+  gap: 14px;
+}
+
+.parent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.parent-grid article {
+  min-height: 86px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  text-align: center;
+}
+
+.parent-grid strong {
+  font-size: 1.3rem;
+}
+
+.parent-grid span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.parent-controls {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.parent-controls label {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.72);
+  font-weight: 850;
+}
+
+.parent-controls input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--sea);
+}
+
+@media (max-width: 900px) {
+  .controls,
+  .activity-stage,
+  .parent-panel,
+  .pack-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .app-shell {
+    width: min(100% - 20px, 1180px);
+    padding-top: 10px;
+  }
+
+  .topbar,
+  .daily-plan,
+  .section-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .daily-plan,
+  .activity-grid,
+  .parent-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-content h2 {
+    font-size: 1.55rem;
+  }
+}
