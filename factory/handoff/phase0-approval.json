@@ -11,17 +11,17 @@
       "path": "factory/handoff/00-agent-role-cards.md",
       "approved": true,
       "approved_by": "Vineet",
-      "approved_at": "2026-05-14T19:19:27Z",
+      "approved_at": "2026-05-14T19:37:39Z",
       "notes": "Approved. 11 agents per QA/Security split. v0.9 Section 16 used as authoritative source. Template parentheticals stripped from field labels."
     },
     {
       "path": "factory/handoff/00-evidence-and-gate-policy.md",
-      "approved": false,
-      "approved_by": null,
-      "approved_at": null,
-      "notes": "Pending T4. Document 3 has not been drafted or approved yet."
+      "approved": true,
+      "approved_by": "Vineet",
+      "approved_at": "2026-05-14T19:37:39Z",
+      "notes": "Approved. Closes Phase 0. Header cleanup pass applied."
     }
   ],
-  "all_approved": false,
-  "ready_for_phase1": false
+  "all_approved": true,
+  "ready_for_phase1": true
 }
