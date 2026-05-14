@@ -1,0 +1,61 @@
+path,size_bytes,last_modified,one_line_purpose,classification,reason
+factory/agents/agent-roles-v1.md,781,2026-05-12T11:33:16.608Z,Defines draft agent roles and basic rule.,REWRITE,Agent roles are valid but too short for Phase 0 role cards.
+factory/anti-hallucination-rules.md,801,2026-05-11T20:14:28.724Z,Defines source and evidence rules.,KEEP,Current core rule: source and evidence required.
+factory/architecture/architecture-decision-record-template.md,473,2026-05-11T20:14:28.730Z,Template for architecture decision records.,KEEP,Useful ADR template for design decisions.
+factory/architecture/default-architecture.md,1157,2026-05-11T20:14:28.730Z,Baseline architecture guidance.,KEEP,Current baseline architecture guidance.
+factory/commercial/product-market-gate.md,3283,2026-05-11T20:14:28.729Z,Commercial gate for product ideas.,KEEP,Current commercial gate for buyer and pain checks.
+factory/design/ux-quality-standard.md,816,2026-05-11T20:14:28.715Z,UX quality bar for products.,KEEP,Current product UX quality bar.
+factory/factory-1-readiness-checklist.md,992,2026-05-11T20:14:28.743Z,Factory readiness checklist.,REWRITE,Checklist is useful but incomplete against v0.9 factory scope.
+factory/factory-charter.md,712,2026-05-11T20:14:28.714Z,Factory purpose and charter.,REWRITE,Concept is valid but needs alignment to Phase 0 process.
+factory/factory-model-summary.md,6970,2026-05-13T09:25:42.960Z,Summary of FactoryModel and agents.,REWRITE,Recent summary is useful but not a formal Phase 0 source.
+factory/governance/decision-rights-matrix.md,695,2026-05-11T20:14:28.732Z,Decision ownership and approval matrix.,KEEP,Current human approval boundary source.
+factory/governance/evidence-ledger-format.md,676,2026-05-11T20:14:28.732Z,Evidence ledger format.,KEEP,Current evidence record format source.
+factory/governance/evidence-policy.md,351,2026-05-11T20:14:28.733Z,Evidence capture policy.,KEEP,Current evidence policy source.
+factory/handoff/state-baseline-2026-05-13.md,3911,2026-05-13T22:18:10.852Z,T0 repository baseline report.,KEEP,Current T0 baseline evidence.
+factory/jarvis-build-spec.md,9425,2026-05-13T09:45:01.946Z,Jarvis implementation specification.,REWRITE,Jarvis spec is useful but broader Phase 0 docs should govern implementation.
+factory/learning/interviews/learning-2026-05-12T12-42-33-924Z.md,3919,2026-05-12T12:42:33.925Z,Generated moderator learning interview record.,ARCHIVE,Generated runtime snapshot; ledger keeps canonical summary.
+factory/learning/interviews/learning-2026-05-12T12-43-21-954Z.md,4055,2026-05-12T12:43:21.955Z,Generated moderator learning interview record.,ARCHIVE,Generated runtime snapshot; ledger keeps canonical summary.
+factory/learning/interviews/learning-2026-05-12T12-58-52-996Z.md,4226,2026-05-12T12:58:52.997Z,Generated moderator learning interview record.,ARCHIVE,Generated runtime snapshot; ledger keeps canonical summary.
+factory/learning/interviews/learning-2026-05-12T13-48-38-544Z.md,3969,2026-05-12T13:48:38.544Z,Generated moderator learning interview record.,ARCHIVE,Generated runtime snapshot; ledger keeps canonical summary.
+factory/learning/interviews/learning-2026-05-12T15-16-30-962Z.md,4226,2026-05-12T15:16:30.963Z,Generated moderator learning interview record.,ARCHIVE,Generated runtime snapshot; ledger keeps canonical summary.
+factory/learning/interviews/learning-2026-05-12T16-25-03-147Z.md,4226,2026-05-12T16:25:03.148Z,Generated moderator learning interview record.,ARCHIVE,Generated runtime snapshot; ledger keeps canonical summary.
+factory/learning/interviews/learning-2026-05-12T16-38-25-256Z.md,4226,2026-05-12T16:38:25.257Z,Generated moderator learning interview record.,ARCHIVE,Generated runtime snapshot; ledger keeps canonical summary.
+factory/learning/interviews/learning-2026-05-12T17-06-59-244Z.md,4226,2026-05-12T17:06:59.245Z,Generated moderator learning interview record.,ARCHIVE,Generated runtime snapshot; ledger keeps canonical summary.
+factory/learning/interviews/learning-2026-05-12T17-12-19-794Z.md,4226,2026-05-12T17:12:19.795Z,Generated moderator learning interview record.,ARCHIVE,Generated runtime snapshot; ledger keeps canonical summary.
+factory/learning/interviews/learning-2026-05-12T17-18-56-443Z.md,3969,2026-05-12T17:18:56.444Z,Generated moderator learning interview record.,ARCHIVE,Generated runtime snapshot; ledger keeps canonical summary.
+factory/learning/interviews/learning-2026-05-12T17-20-45-584Z.md,4226,2026-05-12T17:20:45.585Z,Generated moderator learning interview record.,ARCHIVE,Generated runtime snapshot; ledger keeps canonical summary.
+factory/learning/interviews/learning-2026-05-13T09-57-45-104Z.md,4226,2026-05-13T09:57:45.107Z,Generated moderator learning interview record.,ARCHIVE,Generated runtime snapshot; ledger keeps canonical summary.
+factory/learning/interviews/learning-2026-05-13T09-58-23-853Z.md,4226,2026-05-13T09:58:23.854Z,Generated moderator learning interview record.,ARCHIVE,Generated runtime snapshot; ledger keeps canonical summary.
+factory/learning/interviews/learning-2026-05-13T17-26-29-625Z.md,4226,2026-05-13T17:26:29.626Z,Generated moderator learning interview record.,ARCHIVE,Generated runtime snapshot; ledger keeps canonical summary.
+factory/legal/privacy-and-legal-baseline.md,620,2026-05-11T20:14:28.740Z,Privacy and legal baseline.,KEEP,Current legal and privacy baseline.
+factory/modules/module-contract-template.md,740,2026-05-11T20:14:28.742Z,Reusable module contract template.,KEEP,Useful reusable module contract template.
+factory/modules/reusable-module-roadmap.md,711,2026-05-11T20:14:28.742Z,Roadmap for reusable modules.,KEEP,Current roadmap for reusable modules.
+factory/operations/agent-parallelism-and-dependencies.md,6653,2026-05-12T11:29:16.073Z,Rules for agent dependency control.,KEEP,Current dependency and parallel work rules.
+factory/operations/build-workflow.md,4307,2026-05-12T11:31:44.364Z,Factory build workflow.,KEEP,Current core build workflow source.
+factory/operations/check-commands.md,743,2026-05-11T20:58:57.554Z,Local check command reference.,KEEP,Current local verification command reference.
+factory/operations/factory-setup-log.md,665,2026-05-11T20:58:57.593Z,Historical factory setup log.,KEEP,Historical setup evidence; not a design source.
+factory/operations/jarvis-reliability-and-self-healing.md,2824,2026-05-12T17:27:28.761Z,Jarvis reliability notes.,REWRITE,Concept valid but tied to current local Jarvis prototype.
+factory/operations/moderator-learning-loop.md,3539,2026-05-12T14:59:06.437Z,Moderator learning loop policy.,KEEP,Current learning-loop policy source.
+factory/operations/release-gates.md,3494,2026-05-11T20:23:44.723Z,Release gate policy.,KEEP,Current release gate policy source.
+factory/operations/session-handoff-2026-05-12.md,9149,2026-05-12T16:21:31.454Z,Session pickup note.,KEEP,Only detailed session handoff currently present.
+factory/operations/support-and-operations-baseline.md,652,2026-05-11T20:14:28.727Z,Support and operations baseline.,KEEP,Current support operations baseline.
+factory/product/product-quality-standard.md,921,2026-05-11T20:14:28.725Z,Sellable product quality standard.,KEEP,Current sellable product quality standard.
+factory/repo-structure.md,665,2026-05-11T20:14:28.743Z,Repository structure guidance.,REWRITE,Path references older BuildPod layout and needs current repo alignment.
+factory/security/backup-and-recovery-policy.md,556,2026-05-11T20:14:28.721Z,Backup And Recovery Policy,KEEP,Current backup and recovery policy.
+factory/security/data-classification.md,708,2026-05-11T20:14:28.722Z,Data Classification,KEEP,Current data classification source.
+factory/security/dependency-security-policy.md,618,2026-05-11T20:14:28.720Z,Dependency Security Policy,KEEP,Current dependency security policy.
+factory/security/git-github-policy.md,1748,2026-05-11T20:23:44.679Z,Git And GitHub Policy,KEEP,Current Git and GitHub safety policy.
+factory/security/incident-response-lite.md,478,2026-05-11T20:14:28.722Z,Incident Response Lite,KEEP,Current lightweight incident response policy.
+factory/security/local-ai-privacy-policy.md,406,2026-05-11T20:14:28.720Z,Local AI Privacy Policy,KEEP,Current local AI privacy boundary.
+factory/security/permissions-and-access.md,2560,2026-05-11T20:23:44.634Z,Permissions And Access Policy,KEEP,Current permission and approval boundary source.
+factory/security/product-security-checklist.md,663,2026-05-11T20:14:28.722Z,Product Security Checklist,KEEP,Current product security checklist.
+factory/security/secrets-policy.md,672,2026-05-11T20:14:28.723Z,Secrets Policy,KEEP,Current secrets policy.
+factory/security/security-baseline.md,753,2026-05-11T20:14:28.720Z,Security Baseline,KEEP,Current security baseline.
+factory/security/supply-chain-policy.md,404,2026-05-11T20:14:28.719Z,Supply Chain Policy,KEEP,Current supply chain policy.
+factory/templates/agent-evidence-record-template.md,242,2026-05-11T20:14:28.739Z,Agent evidence record template.,KEEP,Useful agent evidence template.
+factory/templates/product-intake-template.md,387,2026-05-11T20:14:28.738Z,Product intake template.,REWRITE,Template is too thin for v0.9 mandatory intake.
+factory/templates/release-checklist-template.md,348,2026-05-11T20:14:28.735Z,Release checklist template.,KEEP,Useful release checklist template.
+factory/templates/ticket-template.md,424,2026-05-12T11:30:45.323Z,Ticket template.,REWRITE,Template lacks full v0.9 traceability fields.
+factory/templates/tool-decision-record-template.md,256,2026-05-11T20:14:28.734Z,Tool decision template.,KEEP,Useful tool decision template.
+factory/tool-registry.md,2313,2026-05-11T20:14:28.715Z,Factory tool registry.,KEEP,Current approved tool registry.
+factory/tools/README.md,1053,2026-05-12T17:26:30.226Z,Factory tool documentation.,KEEP,Current factory tool reference.
