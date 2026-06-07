@@ -22,3 +22,6 @@ factory/learning/interviews/learning-*.md
 # Editor and OS noise
 .idea/
 .vscode/
+
+# Review and export archives
+*.zip
